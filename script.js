@@ -1,31 +1,46 @@
 const searchButton = document.querySelector(".button");
 const inputSearch = document.querySelector(".input");
+const mask = document.querySelector(".mask");
+
+window.addEventListener("load", async () => {
+  mask.classList.add("hide");
+  setTimeout(() => {
+    mask.remove();
+  }, 1000);
+});
 
 searchButton.onclick = async (e) => {
   e.preventDefault();
   try {
-    const info = await weatherCity(inputSearch.value);
-  } catch (error) {
-    alert("Error request");
-  }
+    const info = await weatherCity(inputSearch.value.trim());
 
-  const normalizedCity = normalize(info);
-  render(normalizedCity);
+    const normalizedCity = normalize(info);
+    render(normalizedCity);
+  } catch (error) {
+    console.error(error.message);
+  }
 };
+
+window.addEventListener("load", async () => {
+  const info1 = await weatherCity();
+  const normalizedCity = normalize(info1);
+  render(normalizedCity);
+});
 
 const weatherCity = (cityName = "Budapest") => {
   let res;
+
   const getCityWeather = fetch(
     `${apiUrl}data/2.5/weather?q=${cityName}&APPID=${apiKey}`
   );
+  res = getCityWeather
+    .then((response) => response.json())
+    .then((json) => json)
+    .then()
+    .catch((err) => {
+      throw new Error("Error request");
+    });
 
-  try {
-    res = getCityWeather
-      .then((response) => response.json())
-      .then((json) => json);
-  } catch (error) {
-    console.error("Error request");
-  }
   return res;
 };
 normalize = (info) => {
@@ -36,7 +51,7 @@ normalize = (info) => {
   const {
     weather: [{ main }],
   } = info;
-
+  // console.log(temp);
   temp -= 273.15;
   return { name, temp: temp.toFixed(0) + "°С", main, img: randomImg() };
 };

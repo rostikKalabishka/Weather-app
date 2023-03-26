@@ -8,30 +8,32 @@
     <title>WeatherRein</title>
   </head>
   <body>
+    <div class="mask">
+      <div class="loader"></div>
+    </div>
     <header class="header">
       <h1 class="title">
         <img class="img-title" src="/img/rain2.png" width="50px" />
         WeatherRain
       </h1>
       <form class="form">
-        <input class="input" type="text" placeholder="Введіть назву міста" />
-        <button class="button" value="" type="submit">Показати</button>
+        <input class="input" type="text" placeholder="Enter the city name" />
+        <button class="button" value="" type="submit">Show</button>
       </form>
     </header>
 
     <div class="card">
-      <h2 class="card-city">Мукачево</h2>
+      <h2 class="card-city"></h2>
       <div class="card-weather">
-        <div class="card-value">17°С</div>
+        <div class="card-value"></div>
         <img
           class="card-image"
           src="/img/DisastrousEarlyAxolotl.webp"
-          width="120px"
           alt="Weather"
         />
       </div>
 
-      <div class="card-description">Хмарно</div>
+      <div class="card-description"></div>
     </div>
 
     <script async src="api.js"></script>
