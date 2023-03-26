@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" , type="text/css" , href="style.css" />
+    <title>WeatherRein</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">
+        <img class="img-title" src="/img/rain2.png" width="50px" />
+        WeatherRain
+      </h1>
+      <form class="form">
+        <input class="input" type="text" placeholder="Введіть назву міста" />
+        <button class="button" value="" type="submit">Показати</button>
+      </form>
+    </header>
+
+    <div class="card">
+      <h2 class="card-city">Мукачево</h2>
+      <div class="card-weather">
+        <div class="card-value">17°С</div>
+        <img
+          class="card-image"
+          src="/img/DisastrousEarlyAxolotl.webp"
+          width="120px"
+          alt="Weather"
+        />
+      </div>
+
+      <div class="card-description">Хмарно</div>
+    </div>
+
+    <script async src="api.js"></script>
+    <script async src="script.js"></script>
+  </body>
+</html>

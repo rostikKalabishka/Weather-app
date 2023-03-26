@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  row-gap: 50px;
+}
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0 70px;
+  height: 150px;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    142deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(224, 184, 80, 0.9752275910364145) 100%
+  );
+}
+.title {
+  margin-right: 40px;
+  margin-bottom: 20px;
+  font-family: "Segoe UI";
+  font-size: 44px;
+  line-height: 52px;
+  text-align: center;
+  .img-title {
+    margin-top: 25px;
+  }
+}
+.form {
+  width: 460px;
+  justify-content: space-between;
+  display: flex;
+  height: 52px;
+
+  border-radius: 4px;
+}
+.input {
+  flex-grow: 1;
+  padding: 15px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  color: black;
+  border-radius: 4px;
+}
+.button {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #312d2d;
+  width: 140px;
+  height: 52px;
+  border-radius: 4px;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    142deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(50, 210, 219, 0.8799894957983193) 100%
+  );
+  line-height: 1;
+  font-weight: 500;
+
+  transition: background-color 0.3s ease-in-out;
+
+  cursor: pointer;
+}
+.button:hover {
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    142deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(42, 233, 196, 0.8799894957983193) 100%
+  );
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 360px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 5px 20px rgba(27, 108, 114, 0.25);
+}
+
+.card-city {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 33px;
+  color: black;
+}
+.card-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-value {
+  font-size: 85px;
+  line-height: 1;
+}
+
+.card-image {
+  margin-top: 20px;
+}
+
+.card-discription {
+  font-size: 26px;
+  line-height: 40px;
+}
