@@ -1,7 +1,7 @@
 const searchButton = document.querySelector(".button");
 const inputSearch = document.querySelector(".input");
 const mask = document.querySelector(".mask");
-
+const errorMessage = document.querySelector(".error-message");
 window.addEventListener("load", async () => {
   mask.classList.add("hide");
   setTimeout(() => {
@@ -11,15 +11,25 @@ window.addEventListener("load", async () => {
 
 searchButton.onclick = async (e) => {
   e.preventDefault();
+  if (isError) {
+    isError = false;
+    errorMessage.textContent = " ";
+  }
   try {
     const info = await weatherCity(inputSearch.value.trim());
-
     const normalizedCity = normalize(info);
     render(normalizedCity);
   } catch (error) {
-    console.error(error.message);
+    {
+      isError = true;
+
+      errorMessage.textContent = "Not Found";
+      errorMessage.classList.add("hide");
+    }
   }
 };
+
+let isError = false;
 
 window.addEventListener("load", async () => {
   const info1 = await weatherCity();
@@ -38,7 +48,7 @@ const weatherCity = (cityName = "Budapest") => {
     .then((json) => json)
     .then()
     .catch((err) => {
-      throw new Error("Error request");
+      console.log(err.message);
     });
 
   return res;
@@ -81,4 +91,4 @@ randomImg = () => {
   return img[rand];
 };
 
-//loader + error
+//  error під інпутом
